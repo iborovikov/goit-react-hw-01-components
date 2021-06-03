@@ -1,0 +1,27 @@
+.friend__list {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-row-gap: 5px;
+  text-align: center;
+  align-items: center;
+  width: 250px;
+  list-style: none;
+  padding-left: 0px;
+}
+.item {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr 1fr;
+  height: 100px;
+  align-items: center;
+  padding: 5px;
+
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  box-shadow: 7px 8px 8px -4px #000000;
+}
+.status {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50%;
+}

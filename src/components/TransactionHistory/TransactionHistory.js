@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import styles from './Transaction-history.module.css';
 
 const TransactionHistory = ({ items }) => (
-    <table class="transaction-history">
-        <thead>
+    <table className={styles.transaction__history}>
+        <thead className={styles.table__head}>
             <tr>
                 <th>Type</th>
                 <th>Amount</th>
@@ -11,13 +12,22 @@ const TransactionHistory = ({ items }) => (
         </thead>
 
         <tbody>
-            {items.map(({ id, type, amount, currency }) => (
+            {items.map(({ id, type, amount, currency }, index) => {
+
+                const bcg = () => {
+                    if (index % 2 === 0) {
+                        return 'white'
+                    }
+                    return 'seashell'
+                }
+                return (
                 <tr key={id}>
-                    <td>{type}</td>
-                    <td>{amount}</td>
-                    <td>{currency}</td>
+                    <td className={styles.data} style={{ backgroundColor: bcg() }}>{type}</td>
+                    <td className={styles.data} style={{ backgroundColor: bcg() }}>{amount}</td>
+                    <td className={styles.data} style={{ backgroundColor: bcg() }}>{currency}</td>
                 </tr>
-            ))}
+            )
+            })}
         </tbody>
     </table>
 );

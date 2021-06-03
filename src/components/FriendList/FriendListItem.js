@@ -1,12 +1,23 @@
 import PropTypes from 'prop-types';
+import styles from './Friend-list.module.css';
 
-const FriendListItem = ({ avatar, name, isOnline }) => (
+const FriendListItem = ({ avatar, name, isOnline }) => {
+    const getStatusColor = () => {
+        if (isOnline) {
+            return 'green'
+        }
+        return 'red'
+    };
+    return (
     <>
-        <span class="status">{isOnline}</span>
-        <img class="avatar" src={avatar} alt={name} width="48" />
-        <p class="name">{name}</p>
+        <span className={styles.status} style={{ backgroundColor: getStatusColor() }}></span>
+        <img className={styles.avatar} src={avatar} alt={name} width="48" />
+        <p className={styles.name}>{name}</p>
     </>
 );
+
+    
+} 
 export default FriendListItem;
 
 FriendListItem.propTypes = {
