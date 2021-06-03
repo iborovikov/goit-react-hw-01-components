@@ -36,6 +36,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^7.27.0",
+    "prettier": "^2.3.0",
     "prop-types": "^15.7.2"
   }
 }
