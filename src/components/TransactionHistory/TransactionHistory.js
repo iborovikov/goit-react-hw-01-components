@@ -13,18 +13,13 @@ const TransactionHistory = ({ items }) => (
 
         <tbody>
             {items.map(({ id, type, amount, currency }, index) => {
+                const bcg = index % 2 === 0 ? 'white' : 'seashell'
 
-                const bcg = () => {
-                    if (index % 2 === 0) {
-                        return 'white'
-                    }
-                    return 'seashell'
-                }
                 return (
                 <tr key={id}>
-                    <td className={styles.data} style={{ backgroundColor: bcg() }}>{type}</td>
-                    <td className={styles.data} style={{ backgroundColor: bcg() }}>{amount}</td>
-                    <td className={styles.data} style={{ backgroundColor: bcg() }}>{currency}</td>
+                    <td className={styles.data} style={{ backgroundColor: bcg }}>{type}</td>
+                    <td className={styles.data} style={{ backgroundColor: bcg }}>{amount}</td>
+                    <td className={styles.data} style={{ backgroundColor: bcg }}>{currency}</td>
                 </tr>
             )
             })}
