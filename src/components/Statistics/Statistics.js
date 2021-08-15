@@ -7,7 +7,7 @@ function getRandom(min, max){
 
 const Statistics = ({ title, stats }) => (
     <section className={ styles.statistics }>
-        <h2 className={ styles.title }>{title}</h2>
+        {title && <h2 className={ styles.title }>{title}</h2>}
         <ul className={ styles.stat__list }>
               {stats.map(({ id, label, percentage }) => {
                 const randomColor = `rgb(${getRandom(0, 240)}, ${getRandom(0, 240)}, ${getRandom(0, 240)})`
@@ -24,9 +24,9 @@ const Statistics = ({ title, stats }) => (
 
 export default Statistics;
 
-Statistics.defaultProps = {
-    title: "Upload stats"
-};
+// Statistics.defaultProps = {
+//     title: "Upload stats"
+// };
 
 Statistics.propTypes = {
     title: PropTypes.string,
